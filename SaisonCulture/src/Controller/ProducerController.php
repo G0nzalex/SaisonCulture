@@ -8,13 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProducerController extends AbstractController
 {
-    #[Route('/producer', name: 'app_producer')]
-    public function index(): Response
-    {
-        return $this->render('producer/index.html.twig', [
-            'controller_name' => 'ProducerController',
-        ]);
-    }
     #[Route('/producer/ajoutDeProduit', name: 'app_ajout')]
     public function ajout(): Response
     {

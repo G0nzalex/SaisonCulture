@@ -8,13 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AccountController extends AbstractController
 {
-    #[Route('/account', name: 'app_account')]
-    public function index(): Response
-    {
-        return $this->render('account/index.html.twig', [
-            'controller_name' => 'AccountController',
-        ]);
-    }
     #[Route('/account/jesuisunclient', name: 'app_jesuisunclient')]
     public function inscriptionClient(): Response
     {
