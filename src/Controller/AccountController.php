@@ -25,7 +25,7 @@ class AccountController extends AbstractController
     #[Route('/account/seConnecter', name: 'app_seConnecter')]
     public function login(): Response
     {
-        return $this->render('account/login.html.twig', [
+        return $this->render('account/connexion.html.twig', [
             'controller_name' => 'AccountController',
         ]);
     }
