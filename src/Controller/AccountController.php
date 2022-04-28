@@ -8,21 +8,21 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AccountController extends AbstractController
 {
-    #[Route('/account/jesuisunclient', name: 'app_jesuisunclient')]
+    #[Route('/jesuisunclient', name: 'app_jesuisunclient')]
     public function inscriptionClient(): Response
     {
-        return $this->render('account/inscriptionClient.html.twig', [
+        return $this->render('account/inscriptionclient.html.twig', [
             'controller_name' => 'AccountController',
         ]);
     }
-    #[Route('/account/jesuisunproducteur', name: 'app_jesuisunproducteur')]
+    #[Route('/jesuisunproducteur', name: 'app_jesuisunproducteur')]
     public function inscriptionProducteur(): Response
     {
-        return $this->render('account/inscriptionProducteur.html.twig', [
+        return $this->render('account/inscriptionproducteur.html.twig', [
             'controller_name' => 'AccountController',
         ]);
     }
-    #[Route('/account/seConnecter', name: 'app_seConnecter')]
+    #[Route('/seconnecter', name: 'app_seconnecter')]
     public function login(): Response
     {
         return $this->render('account/connexion.html.twig', [

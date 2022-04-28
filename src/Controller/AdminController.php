@@ -8,22 +8,22 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdminController extends AbstractController
 {
-    #[Route('/admin/gestionUtilisateurs', name: 'gestionUtilisateur')]
-    public function gestionUtilisateur(): Response
+    #[Route('/gestionutilisateurs', name: 'gestionutilisateurs')]
+    public function gestionUtilisateurs(): Response
     {
         return $this->render('admin/utilisateur.html.twig', [
             'controller_name' => 'AdminController',
         ]);
     }
-    #[Route('/admin/gestionCategories', name: 'gestionCategories')]
-    public function gestionCategorie(): Response
+    #[Route('/gestioncategories', name: 'gestioncategories')]
+    public function gestionCategories(): Response
     {
         return $this->render('admin/categories.html.twig', [
             'controller_name' => 'AdminController',
         ]);
     }
-    #[Route('/admin/gestionProduits', name: 'gestionProduits')]
-    public function gestionProduit(): Response
+    #[Route('/gestionproduits', name: 'gestionproduits')]
+    public function gestionProduits(): Response
     {
         return $this->render('admin/produits.html.twig', [
             'controller_name' => 'AdminController',

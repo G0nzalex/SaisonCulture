@@ -8,28 +8,28 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProducerController extends AbstractController
 {
-    #[Route('/producer/ajoutDeProduit', name: 'app_ajout')]
+    #[Route('/ajoutdeproduit', name: 'app_ajout')]
     public function ajout(): Response
     {
         return $this->render('producer/ajout.html.twig', [
             'controller_name' => 'ProducerController',
         ]);
     }
-    #[Route('/producer/modificationDeProduit', name: 'app_modification')]
+    #[Route('/modificationdeproduit', name: 'app_modification')]
     public function modification(): Response
     {
         return $this->render('producer/modification.html.twig', [
             'controller_name' => 'ProducerController',
         ]);
     }
-    #[Route('/producer/modificationCompte', name: 'app_modificationCompte')]
+    #[Route('/modificationcompte', name: 'app_modificationcompte')]
     public function modificationCompte(): Response
     {
         return $this->render('producer/modification.html.twig', [
             'controller_name' => 'ProducerController',
         ]);
     }
-    #[Route('/producer/suppression', name: 'app_suppression')]
+    #[Route('/suppression', name: 'app_suppression')]
     public function suppression(): Response
     {
         return $this->render('producer/suppression.html.twig', [
