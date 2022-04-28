@@ -15,31 +15,38 @@ class HomepageController extends AbstractController
             'controller_name' => 'HomepageController',
         ]);
     }
-    #[Route('/homepage', name: 'app_homepage')]
-    public function homepage(): Response
+    #[Route('/homepage/Apropos', name: 'app_apropos')]
+    public function apropos(): Response
     {
-        return $this->render('homepage/accueil.html.twig', [
+        return $this->render('homepage/apropos.html.twig', [
             'controller_name' => 'HomepageController',
         ]);
     }
-    #[Route('/homepage', name: 'app_homepage')]
-    public function homepage(): Response
+    #[Route('/homepage/CGU', name: 'app_CGU')]
+    public function cgu(): Response
     {
-        return $this->render('homepage/accueil.html.twig', [
+        return $this->render('homepage/cgu.html.twig', [
             'controller_name' => 'HomepageController',
         ]);
     }
-    #[Route('/homepage', name: 'app_homepage')]
-    public function homepage(): Response
+    #[Route('/homepage/mentions', name: 'app_mentions')]
+    public function mentions(): Response
     {
-        return $this->render('homepage/accueil.html.twig', [
+        return $this->render('homepage/mentions.html.twig', [
             'controller_name' => 'HomepageController',
         ]);
     }
-    #[Route('/homepage', name: 'app_homepage')]
-    public function homepage(): Response
+    #[Route('/homepage/presentation', name: 'app_presentation')]
+    public function presentation(): Response
     {
-        return $this->render('homepage/accueil.html.twig', [
+        return $this->render('homepage/presentation.html.twig', [
+            'controller_name' => 'HomepageController',
+        ]);
+    }
+    #[Route('/homepage/RGPD', name: 'app_RGPD')]
+    public function rgpd(): Response
+    {
+        return $this->render('homepage/rgpd.html.twig', [
             'controller_name' => 'HomepageController',
         ]);
     }
