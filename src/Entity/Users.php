@@ -52,6 +52,9 @@ class Users
     #[ORM\Column(type: 'datetime', nullable: true)]
     private $modifiedat;
 
+    #[ORM\Column(type: 'integer')]
+    private $siretNumber;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -209,6 +212,18 @@ class Users
     public function setModifiedat(?\DateTimeInterface $modifiedat): self
     {
         $this->modifiedat = $modifiedat;
+
+        return $this;
+    }
+
+    public function getSiretNumber(): ?int
+    {
+        return $this->siretNumber;
+    }
+
+    public function setSiretNumber(int $siretNumber): self
+    {
+        $this->siretNumber = $siretNumber;
 
         return $this;
     }
