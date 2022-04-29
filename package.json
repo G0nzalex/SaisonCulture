@@ -16,6 +16,8 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "react-scripts": "^5.0.1"
+        "@popperjs/core": "^2.11.5",
+        "react-scripts": "^5.0.1",
+        "startbootstrap-sb-admin-2": "^4.1.4"
     }
 }
