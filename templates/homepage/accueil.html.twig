@@ -1,20 +1,92 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomepageController!{% endblock %}
+{% block title %}
+    SaisonCulture
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <header>
+        <h1>
+            SaisonCulture
+        </h1>
+        <img src="produits.jpg">
+        <h2>
+            Du producteur au consommateur
+        </h2> 
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur dignissimos, dolore ipsum quisquam magni perferendis eveniet, assumenda officia asperiores porro cumque id architecto voluptate esse eos laborum fugiat perspiciatis obcaecati?
+        </p>
+        <button>
+            <a></a>Inscrivez-vous ici 
+        </button>
+    </header>
+    <section id="inscription" class="printemps">
+        <div class="producteur">
+            <img class="fond" src="./public/assets/img/terre.jpg">
+            <h2>
+            
+            </h2>
+            <p>
+                Pour plus d'informations cliquez sur le bouton ci-dessous.
+            </p>
+            <button>
+                <a></a>Producteurs
+            </button>
+        </div>
+        <div class="visteur">
+            <img src="./public/assets/img/panier.jpg">
+            <h2>
+            
+            </h2>
+            <p>
+                Pour plus d'informations cliquez sur le bouton ci-dessous.
+            </p>
+        </div>
+    </section>
+    <section id="carte" class="printemps">
+        <div class="one">
+            <img src="./public/assets/img/abricot.jpg">
+            <p>
+                Abricot
+            </p>
+        </div>
+        <div class="two">
+            <img src="./public/assets/img/brocoli.jpg">
+            <p>
+                Brocoli
+            </p>
+        </div>
+        <div class="three">
+            <img src="./public/assets/img/cerise.jpg">
+            <p>
+                Cerise
+            </p>
+        </div>
+        <div class="four">
+            <img src="./public/assets/img/abricot.jpg">
+            <p>
+                Abricot
+            </p>
+        </div> 
+    </section>
+    <section id="presentation" class="printemps">
+        <div class="texte">
+            <h3>
+                SaisonCulture
+            </h3>
+            <p>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/SaisonCulture/src/Controller/HomepageController.php'|file_link(0) }}">src/Controller/HomepageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/SaisonCulture/templates/homepage/index.html.twig'|file_link(0) }}">templates/homepage/index.html.twig</a></code></li>
-    </ul>
-</div>
+            </p>
+            <ul>
+                <li> 
+                    Découvrir des producteur près de chez vous 
+                </li>
+                <li>
+                    Acheter des produits locaux
+                </li>
+                <li>
+                    Visiter des fermes pédagogiques
+                </li>
+            </ul>
+        </div>
 {% endblock %}
