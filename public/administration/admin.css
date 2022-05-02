@@ -11280,3 +11280,8 @@
     width: 100%;
   }
   
+  .note{
+    display: flex;
+    flex-direction: column;
+    max-width: 25%;
+  }
