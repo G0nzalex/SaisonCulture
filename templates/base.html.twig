@@ -10,11 +10,9 @@
     <link rel="stylesheet" href="{{ asset('C:\xampp\htdocs\SaisonCulture\assets\admin\admin.css
     ') }}">
     {% block stylesheets %}
-    {{ encore_entry_link_tags('admin') }}
     {% endblock %}
 
     {% block javascripts %}
-    {{ encore_entry_script_tags('admin') }}
     {% endblock %}
 </head>
 
@@ -25,7 +23,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="{{ path('homepage') }}">Front</a></li>
+                <li><a href="{{ path('app_homepage') }}">Accueil</a></li>
             </ul>
         </nav>
     </header>
