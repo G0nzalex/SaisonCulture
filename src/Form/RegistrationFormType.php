@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -56,6 +57,50 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            // ->add('name', TextType::class, [
+            //     'attr' => [
+            //         'class' => 'producer'
+            //     ],
+                
+            // ])
+            // ->add('company', TextType::class, [
+            //     'attr' => [
+            //         'class' => 'producer'
+            //     ],
+            // ])
+            // ->add('address1', TextType::class, [
+            //     'attr' => [
+            //         'class' => 'producer'
+            //     ],
+            // ])
+            // ->add('address2', TextType::class, [
+            //     'attr' => [
+            //         'class' => 'producer'
+            //     ],
+            // ])
+            // ->add('city', TextType::class, [
+            //     'attr' => [
+            //         'class' => 'producer'
+            //     ],
+            // ])
+            // ->add('zipCode', IntegerType::class, [
+            //     'attr' => [
+            //         'class' => 'producer'
+            //     ],
+            //     'constraints' => [
+            //         new Length([
+            //             'min' => 5,
+            //             'minMessage' => 'You have to write 5 characters for the zip code',
+            //             'max' => 5,
+            //             'maxMessage' => 'You have to write 5 characters for the zip code',
+            //         ])
+            //     ]
+            // ])
+            // ->add('phone', IntegerType::class, [
+            //     'attr' => [
+            //         'class' => 'producer'
+            //     ],
+            // ])
         ;
     }
 

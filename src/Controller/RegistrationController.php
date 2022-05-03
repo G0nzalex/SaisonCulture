@@ -45,4 +45,28 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
+    #[Route('/register/producer', name: 'app_registerproducer')]
+    public function registerProducer(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $user = new User();
+        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // encode the plain password
+            $roles = $form->get('roles')->getData();
+            $user->setRoles([$roles]);
+            $date = new DateTimeImmutable();
+            $user->setCreatedAt($date);
+            $entityManager->persist($user);
+            $entityManager->flush();
+            // do anything else you need here, like send an email
+
+            return $this->redirectToRoute('app_homepage');
+        }
+
+        return $this->render('registration/registerProducer.html.twig', [
+            'registrationForm' => $form->createView(),
+        ]);
+    }
 }
