@@ -5,6 +5,7 @@
         "@symfony/webpack-encore": "^1.8.2",
         "core-js": "^3.0.0",
         "regenerator-runtime": "^0.13.2",
+        "webpack": "^5.72.0",
         "webpack-notifier": "^1.6.0"
     },
     "license": "UNLICENSED",
@@ -16,6 +17,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "encore": "^0.0.30-beta",
         "react-scripts": "^5.0.1"
     }
 }
