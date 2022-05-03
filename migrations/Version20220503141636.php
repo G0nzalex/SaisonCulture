@@ -10,11 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-<<<<<<<< HEAD:migrations/Version20220503124713.php
-final class Version20220503124713 extends AbstractMigration
-========
-final class Version20220502075410 extends AbstractMigration
->>>>>>>> 226f224a904fec752c585baede0e71489f182a90:migrations/Version20220502075410.php
+final class Version20220503141636 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -26,11 +22,7 @@ final class Version20220502075410 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE category (id INT AUTO_INCREMENT NOT NULL, title VARCHAR(200) NOT NULL, description LONGTEXT NOT NULL, createdat DATETIME NOT NULL, modifiedat DATETIME DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE products (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(200) NOT NULL, bio TINYINT(1) NOT NULL, stock INT NOT NULL, price INT NOT NULL, description LONGTEXT NOT NULL, img VARCHAR(255) DEFAULT NULL, active TINYINT(1) NOT NULL, createdat DATETIME NOT NULL, modifiedat DATETIME DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-<<<<<<<< HEAD:migrations/Version20220503124713.php
         $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles LONGTEXT NOT NULL COMMENT \'(DC2Type:json)\', password VARCHAR(255) NOT NULL, name VARCHAR(200) DEFAULT NULL, company VARCHAR(200) DEFAULT NULL, address1 VARCHAR(200) DEFAULT NULL, address2 VARCHAR(200) DEFAULT NULL, city VARCHAR(200) DEFAULT NULL, zipcode INT DEFAULT NULL, phone INT DEFAULT NULL, created_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', validated_at DATETIME DEFAULT NULL COMMENT \'(DC2Type:datetime_immutable)\', token VARCHAR(200) DEFAULT NULL, UNIQUE INDEX UNIQ_8D93D649E7927C74 (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-========
-        $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles LONGTEXT NOT NULL COMMENT \'(DC2Type:json)\', password VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_8D93D649E7927C74 (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
->>>>>>>> 226f224a904fec752c585baede0e71489f182a90:migrations/Version20220502075410.php
     }
 
     public function down(Schema $schema): void
