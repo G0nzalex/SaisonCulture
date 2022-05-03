@@ -5,74 +5,98 @@
 {% endblock %}
 
 {% block body %}
+    <nav>
+        <div class="logo">
+            <a href="{{ path('app_homepage') }}"> <img src ="{{ asset('assets/img/logoprintemps.png') }}">
+        </div>
+        <ul>
+            <li> <a href=""> Producteurs </a> </li>
+            <li> <a href=""> Visiteurs </a>  </li>
+            <li> <a href=""> Connexion </a> </li>
+        </ul>
+    </nav>
     <header>
-        <h1>
-            SaisonCulture
-        </h1>
-        <img src="{{ asset('assets/img/produits.jpg') }}">
-        <h2>
-            Du producteur au consommateur
-        </h2> 
-        <p>
-        </p>
-        <button>
-            <a></a>Inscrivez-vous ici 
-        </button>
+        <div class="fond">
+            <img src="{{ asset('assets/img/produits.jpg') }}">
+        </div>
+        <div class="contenu">
+            <h1>
+                SaisonCulture
+            </h1>
+            <h2>
+                Du producteur au consommateur
+            </h2> 
+            <p>
+                SaisonCulture est la pour mettre en relation des producteurs avec des consomatteurs.
+            </p>
+            <button>
+                <a href=""></a>Inscrivez-vous ici 
+            </button>
+        </div>
     </header>
     <section id="inscription" class="printemps">
         <div class="producteur">
-            <img class="fond" src="{{ asset('assets/img/terre.jpg') }}">
+            <img class="fond" src="{{ asset('assets/img/pousse.jpg') }}">
             <h2>
-            
+                Si vous êtes producteur et que vous êtes intéressé par une relation client alors vous êtes les bienvenu ici
             </h2>
             <p>
                 Pour plus d'informations cliquez sur le bouton ci-dessous.
             </p>
             <button>
-                <a></a>Producteurs
+                <a href=""></a>Producteurs
             </button>
         </div>
         <div class="visteur">
             <img src="{{ asset('assets/img/panier.jpg') }}">
             <h2>
-            
+                Si vous êtes intéressé pour trouver un produit autour de chez vous alors vous êtes les bienvenu ici
             </h2>
             <p>
                 Pour plus d'informations cliquez sur le bouton ci-dessous.
             </p>
+            <button>
+                <a href=""></a>Producteurs
+            </button>
         </div>
     </section>
-    <section id="carte" class="printemps">
-        <div class="one">
-            <img src="{{ asset('assets/img/abricot.jpg') }}">
-            <p>
-                Abricot
-            </p>
+    <section id="bloc">
+        <div class="titre">
+            <h2>Produits récements ajoutés par des producteurs</h2>
         </div>
-        <div class="two">
-            <img src="{{ asset('assets/img/brocoli.jpg') }}">
-            <p>
-                Brocoli
-            </p>
+        <div class="cartes">
+            <div class="produit">
+                <img src="{{ asset('assets/img/abricot.jpg') }}">
+                <p>
+                    Abricot
+                </p>
+                
+            </div>
+            <div class="produit">
+                <img src="{{ asset('assets/img/brocoli.jpg') }}">
+                <p>
+                    Brocoli
+                </p>
+            </div>
+            <div class="produit">
+                <img src="{{ asset('assets/img/cerise.jpg') }}">
+                <p>
+                    Cerise
+                </p>
+            </div>
+            <div class="produit">
+                <img src="{{ asset('assets/img/epinard.jpg') }}">
+                <p>
+                    Epinard
+                </p>
+            </div>
         </div>
-        <div class="three">
-            <img src="{{ asset('assets/img/cerise.jpg') }}">
-            <p>
-                Cerise
-            </p>
-        </div>
-        <div class="four">
-            <img src="{{ asset('assets/img/epinard.jpg') }}">
-            <p>
-                Epinard
-            </p>
-        </div> 
     </section>
     <section id="presentation" class="printemps">
         <div class="texte">
-            <h3>
+            <h2>
                 SaisonCulture
-            </h3>
+            </h2>
             <p>
 
             </p>
@@ -88,4 +112,26 @@
                 </li>
             </ul>
         </div>
+        <div class="image">
+        <img src ="{{ asset('assets/img/prairie.jpg') }}">
+        </div>
+    </section>
+    <footer>
+        <ul>
+            <li> <a href=""> Producteurs </a> </li>
+            <li> <a href=""> Visiteurs </a> </li>
+            <li> <a href="{{ path('app_homepage') }}"> <img src ="{{ asset('assets/img/logoprintemps.png') }}"> </li>
+            <li> <a href=""> Qui sommes-nous ? </a> </li>
+            <li> <a href=""> Assisstance </a> </li>
+        </ul>
+        <a href="https://www.facebook.com/profile.php?id=100080494670142" > <img src="{{ asset('assets/img/facebook.png') }}"> </a>
+        <a href="https://twitter.com/SaisonCulture"> <img src="{{ asset('assets/img/twitter.png') }}"> </a>
+        <a href="https://www.instagram.com/saisonculture/"> <img src="{{ asset('assets/img/instagram.png') }}"> </a>
+        <ul>
+            <li> &copy;-2022 SaisonCulture</li>
+            <li> AJA-dev </li>
+            <li> <a href="{{ path('app_mentions') }}"> Mentions Légales </a></li>
+        </ul>
+
+    </footer> 
 {% endblock %}
