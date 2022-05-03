@@ -26,6 +26,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string')]
     private $password;
 
+    #[ORM\Column(type: 'string', length: 200, nullable: true)]
+    private $name;
+
+    #[ORM\Column(type: 'string', length: 200, nullable: true)]
+    private $company;
+
+    #[ORM\Column(type: 'string', length: 200, nullable: true)]
+    private $address1;
+
+    #[ORM\Column(type: 'string', length: 200, nullable: true)]
+    private $address2;
+
+    #[ORM\Column(type: 'string', length: 200, nullable: true)]
+    private $city;
+
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private $zipcode;
+
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private $phone;
+
+    #[ORM\Column(type: 'datetime_immutable')]
+    private $createdAt;
+
+    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
+    private $validatedAt;
+
+    #[ORM\Column(type: 'string', length: 200, nullable: true)]
+    private $token;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -94,5 +124,125 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getCompany(): ?string
+    {
+        return $this->company;
+    }
+
+    public function setCompany(?string $company): self
+    {
+        $this->company = $company;
+
+        return $this;
+    }
+
+    public function getAddress1(): ?string
+    {
+        return $this->address1;
+    }
+
+    public function setAddress1(?string $address1): self
+    {
+        $this->address1 = $address1;
+
+        return $this;
+    }
+
+    public function getAdress2(): ?string
+    {
+        return $this->address2;
+    }
+
+    public function setAdress2(?string $address2): self
+    {
+        $this->address2 = $address2;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(?string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getZipcode(): ?int
+    {
+        return $this->zipcode;
+    }
+
+    public function setZipcode(?int $zipcode): self
+    {
+        $this->zipcode = $zipcode;
+
+        return $this;
+    }
+
+    public function getPhone(): ?int
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(?int $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getValidatedAt(): ?\DateTimeImmutable
+    {
+        return $this->validatedAt;
+    }
+
+    public function setValidatedAt(?\DateTimeImmutable $validatedAt): self
+    {
+        $this->validatedAt = $validatedAt;
+
+        return $this;
+    }
+
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    public function setToken(?string $token): self
+    {
+        $this->token = $token;
+
+        return $this;
     }
 }
