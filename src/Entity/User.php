@@ -36,7 +36,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $address1;
 
     #[ORM\Column(type: 'string', length: 200, nullable: true)]
-    private $adress2;
+    private $address2;
 
     #[ORM\Column(type: 'string', length: 200, nullable: true)]
     private $city;
@@ -52,6 +52,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $validatedAt;
+
+    #[ORM\Column(type: 'string', length: 200, nullable: true)]
+    private $token;
 
     public function getId(): ?int
     {
@@ -161,12 +164,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getAdress2(): ?string
     {
-        return $this->adress2;
+        return $this->address2;
     }
 
-    public function setAdress2(?string $adress2): self
+    public function setAdress2(?string $address2): self
     {
-        $this->adress2 = $adress2;
+        $this->address2 = $address2;
 
         return $this;
     }
@@ -227,6 +230,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setValidatedAt(?\DateTimeImmutable $validatedAt): self
     {
         $this->validatedAt = $validatedAt;
+
+        return $this;
+    }
+
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    public function setToken(?string $token): self
+    {
+        $this->token = $token;
 
         return $this;
     }
