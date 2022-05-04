@@ -5,21 +5,11 @@
 {% endblock %}
 
 {% block body %}
-    <nav>
-        <div class="logo">
-            <a href="{{ path('app_homepage') }}"> <img src ="{{ asset('assets/img/logoprintemps.png') }}">
-        </div>
-        <ul>
-            <li> <a href=""> Producteurs </a> </li>
-            <li> <a href=""> Visiteurs </a>  </li>
-            <li> <a href=""> Connexion </a> </li>
-        </ul>
-    </nav>
-    <header>
+    <section class="contenu">
         <div class="fond">
             <img src="{{ asset('assets/img/produits.jpg') }}">
         </div>
-        <div class="contenu">
+        <div class="description">
             <h1>
                 SaisonCulture
             </h1>
@@ -30,10 +20,10 @@
                 SaisonCulture est la pour mettre en relation des producteurs avec des consomatteurs.
             </p>
             <button>
-                <a href=""></a>Inscrivez-vous ici 
+                <a href="{{ path('app_register') }}" > Inscrivez-vous ici </a>
             </button>
         </div>
-    </header>
+    </section>
     <section id="inscription" class="printemps">
         <div class="producteur">
             <img class="fond" src="{{ asset('assets/img/pousse.jpg') }}">
@@ -44,7 +34,7 @@
                 Pour plus d'informations cliquez sur le bouton ci-dessous.
             </p>
             <button>
-                <a href=""></a>Producteurs
+                <a href="{{ path('app_register') }}"></a>Producteurs
             </button>
         </div>
         <div class="visteur">
@@ -56,7 +46,7 @@
                 Pour plus d'informations cliquez sur le bouton ci-dessous.
             </p>
             <button>
-                <a href=""></a>Producteurs
+                <a href="{{ path('app_register') }}"></a>Visiteurs
             </button>
         </div>
     </section>
@@ -116,22 +106,4 @@
         <img src ="{{ asset('assets/img/prairie.jpg') }}">
         </div>
     </section>
-    <footer>
-        <ul>
-            <li> <a href=""> Producteurs </a> </li>
-            <li> <a href=""> Visiteurs </a> </li>
-            <li> <a href="{{ path('app_homepage') }}"> <img src ="{{ asset('assets/img/logoprintemps.png') }}"> </li>
-            <li> <a href=""> Qui sommes-nous ? </a> </li>
-            <li> <a href=""> Assisstance </a> </li>
-        </ul>
-        <a href="https://www.facebook.com/profile.php?id=100080494670142" > <img src="{{ asset('assets/img/facebook.png') }}"> </a>
-        <a href="https://twitter.com/SaisonCulture"> <img src="{{ asset('assets/img/twitter.png') }}"> </a>
-        <a href="https://www.instagram.com/saisonculture/"> <img src="{{ asset('assets/img/instagram.png') }}"> </a>
-        <ul>
-            <li> &copy;-2022 SaisonCulture</li>
-            <li> AJA-dev </li>
-            <li> <a href="{{ path('app_mentions') }}"> Mentions Légales </a></li>
-        </ul>
-
-    </footer> 
 {% endblock %}

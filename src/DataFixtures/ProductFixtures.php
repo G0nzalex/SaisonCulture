@@ -16,7 +16,7 @@ class ProductFixtures extends Fixture
         ->setStock(10)
         ->setPrice(200)
         ->setDescription("Fruit issu d'un pommier")
-        ->setImg("http://SaisonCulture/assets/img/uneImage.jpg")
+        ->setImg("http://SaisonCulture/assets/img/pomme.jpg")
         ->setActive(true)
         ->setCreatedAt(new \DateTimeImmutable())
         ->setModifiedAt(new \DateTimeImmutable());
