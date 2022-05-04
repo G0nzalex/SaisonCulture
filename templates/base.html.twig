@@ -5,7 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">        
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% block stylesheets %}
         {% endblock %}
 
@@ -13,9 +13,45 @@
         {% endblock %}
     </head>
 
+    <header>
+        {% block header %}
+            <nav>
+                <div class="logo">
+                    <a href="{{ path('app_homepage') }}"> <img src ="{{ asset('assets/img/logoprintemps.png') }}">
+                </div>
+                <ul>
+                    <li> <a href="{{ path('app_register') }}"> Producteurs </a> </li>
+                    <li> <a href="{{ path('app_register') }}"> Visiteurs </a>  </li>
+                    <li> <a href="{{ path('login') }}"> Connexion </a> </li>
+                </ul>
+            </nav>
+        {% endblock %}
+    </header>
+
     <body>
         {% block body %}
+
         {% endblock %}
     </body>
+
+    <footer>
+        {% block footer %}
+            <ul>
+                <li> <a href="{{ path('app_register') }}"> Producteurs </a> </li>
+                <li> <a href="{{ path('app_register') }}"> Visiteurs </a> </li>
+                <li> <a href="{{ path('app_homepage') }}"> <img src ="{{ asset('assets/img/logoprintemps.png') }}"> </li>
+                <li> <a href=""> Qui sommes-nous ? </a> </li>
+                <li> <a href=""> Assisstance </a> </li>
+            </ul>
+            <a href="https://www.facebook.com/profile.php?id=100080494670142" > <img src="{{ asset('assets/img/facebook.png') }}"> </a>
+            <a href="https://twitter.com/SaisonCulture"> <img src="{{ asset('assets/img/twitter.png') }}"> </a>
+            <a href="https://www.instagram.com/saisonculture/"> <img src="{{ asset('assets/img/instagram.png') }}"> </a>
+            <ul>
+                <li> &copy;-2022 SaisonCulture</li>
+                <li> AJA-dev </li>
+                <li> <a href="{{ path('app_mentions') }}"> Mentions Légales </a></li>
+            </ul>
+        {% endblock %}
+    </footer>
     
 </html>
