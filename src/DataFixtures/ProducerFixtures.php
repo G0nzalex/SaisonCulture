@@ -29,6 +29,7 @@ class ProducerFixtures extends Fixture
         ->setCity("Le Havre")
         ->setZipcode(12345)
         ->setPhone(330698216523)
+        ->setSiret(00000000000000)
         ->setCreatedAt($date)
         ->setRoles(array('ROLE_PRODUCER'));
         $password = $this->hasher->hashPassword($user1, "bonjour");

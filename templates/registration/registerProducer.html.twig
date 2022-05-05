@@ -1,17 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Complétez vos informations{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+    <h1>Complétez vos informations pour vous identifiez en tant que producteur.</h1>
+
+    {{ form_start(registrationForProducerForm) }}
+        {{ form_row(registrationForProducerForm.name, {
+            label: 'Votre nom et prénom : '
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        {{ form_row(registrationForProducerForm.company, {
+            label: 'Votre société : '
+        }) }}
+        {{ form_row(registrationForProducerForm.address1, {
+            label: 'Votre adresse : '
+        }) }}
+        {{ form_row(registrationForProducerForm.city, {
+            label: 'Votre ville : '
+        }) }}
+        {{ form_row(registrationForProducerForm.zipcode, {
+            label: 'Votre code postal : '
+        }) }}
+        {{ form_row(registrationForProducerForm.phone, {
+            label: 'Votre numéro de téléphone : '
+        }) }}
+        {{ form_row(registrationForProducerForm.siret, {
+            label: 'Votre numéro de siret : '
+        })}}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+        <button type="submit" class="btn">Confirmer</button>
+    {{ form_end(registrationForProducerForm) }}
 {% endblock %}
