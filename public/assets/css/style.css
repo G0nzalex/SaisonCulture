@@ -29,15 +29,14 @@ h1, h2 {
 }
 
 a{
-    color: black;
+    color: white;
     text-decoration: none;
 }
+
 ul, ol {
     list-style: none;
 }
-.blanc {
-    color: white;
-}
+
 
 
 .printemps {
@@ -68,7 +67,9 @@ ul, ol {
 }
 
 #colophon {
+    font-size: 1.5rem;
     background-color: #89db0d;
+    color: white;
     padding: 4rem 1rem;
 }
 #colophon .menufooter {
@@ -201,9 +202,9 @@ ul, ol {
 
 
 form {
-    margin-top: 5%;
+    align-items: center;
     text-align: center;
-    padding: 2%;
+    padding: 3rem;
 }
 
 form label {
