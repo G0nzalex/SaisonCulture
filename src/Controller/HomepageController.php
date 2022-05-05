@@ -15,13 +15,7 @@ class HomepageController extends AbstractController
             'controller_name' => 'HomepageController',
         ]);
     }
-    #[Route('/apropos', name: 'app_apropos')]
-    public function apropos(): Response
-    {
-        return $this->render('homepage/apropos.html.twig', [
-            'controller_name' => 'HomepageController',
-        ]);
-    }
+    
     #[Route('/cgu', name: 'app_cgu')]
     public function cgu(): Response
     {
@@ -47,6 +41,14 @@ class HomepageController extends AbstractController
     public function rgpd(): Response
     {
         return $this->render('homepage/rgpd.html.twig', [
+            'controller_name' => 'HomepageController',
+        ]);
+    }
+
+    #[Route('/contact', name: 'app_contact')]
+    public function contact(): Response
+    {
+        return $this->render('homepage/contact.html.twig', [
             'controller_name' => 'HomepageController',
         ]);
     }

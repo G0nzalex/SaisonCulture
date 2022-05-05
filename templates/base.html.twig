@@ -40,16 +40,18 @@
                 <li> <a href="{{ path('app_register') }}"> Producteurs </a> </li>
                 <li> <a href="{{ path('app_register') }}"> Visiteurs </a> </li>
                 <li> <a href="{{ path('app_homepage') }}"> <img src ="{{ asset('assets/img/logoprintemps.png') }}"> </li>
-                <li> <a href=""> Qui sommes-nous ? </a> </li>
-                <li> <a href=""> Assisstance </a> </li>
+                <li> <a href="{{ path('app_presentation') }}"> Qui sommes-nous ? </a> </li>
+                <li> <a href="{{ path('app_contact') }}"> Contact </a> </li>
             </ul>
-            <a href="https://www.facebook.com/profile.php?id=100080494670142" > <img src="{{ asset('assets/img/facebook.png') }}"> </a>
-            <a href="https://twitter.com/SaisonCulture"> <img src="{{ asset('assets/img/twitter.png') }}"> </a>
-            <a href="https://www.instagram.com/saisonculture/"> <img src="{{ asset('assets/img/instagram.png') }}"> </a>
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100080494670142" > <img src="{{ asset('assets/img/facebook.png') }}"> </a>
+            <a target="_blank" href="https://twitter.com/SaisonCulture"> <img src="{{ asset('assets/img/twitter.png') }}"> </a>
+            <a target="_blank" href="https://www.instagram.com/saisonculture/"> <img src="{{ asset('assets/img/instagram.png') }}"> </a>
             <ul>
                 <li> &copy;-2022 SaisonCulture</li>
                 <li> AJA-dev </li>
                 <li> <a href="{{ path('app_mentions') }}"> Mentions Légales </a></li>
+                <li> <a href="{{ path('app_rgpd') }}"> Charte de protection des donnés </a></li>
+                <li> <a href="{{ path('app_cgu') }}"> CGU </a></li>
             </ul>
         {% endblock %}
     </footer>
