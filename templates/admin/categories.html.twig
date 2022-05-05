@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block stylesheets %}
+<style>
+
+h1 {
+    margin-bottom:20px;
+}
+body {
+    text-align:center;
+}
+table {
+    margin:auto;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+    <h1>Les Catégories</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Create_at</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categoryForm %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.title }}</td>
+                <td>{{ category.description }}</td>
+                <td>{{ category.createdAt ? category.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_category_show', {'id': category.id}) }}">Voir</a> /
+                    <a href="{{ path('app_category_edit', {'id': category.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Pas de correspondances</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_category_new') }}">Crée une nouvelle catégorie</a>
+{% endblock %}
