@@ -12,6 +12,13 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/admin')]
 class AdminController extends AbstractController
 {
+    #[Route('/dashboard', name: 'app_dashboard')]
+    public function dashboard(): Response
+    {
+        return $this->render('admin/admin.html.twig', [
+            'controller_name' => 'AdminController',
+        ]);
+    }
     #[Route('/category', name: 'app_category_index', methods: ['GET'])]
     public function index(CategoryRepository $categoryRepository): Response
     {
