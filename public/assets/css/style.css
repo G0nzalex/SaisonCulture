@@ -168,17 +168,36 @@ ul, ol {
     justify-content: space-between;
 }
 #bloc .cartes .produit {
+    padding: 1rem;
     background-color: #89db0d;
     width: 20%;
+}
+#bloc .cartes .produit p {
+    margin-top: 1rem;
 }
 
 #bloc .cartes .produit img {width: 100%;}
 
 #presentation .wrap{
     display: flex;
+    text-align: center;
   
 }
-#presentation img {width: 100%;}
+
+#presentation .wrap > div {
+    width:50%;
+}
+
+#presentation .texte h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#presentation .texte li {
+    padding: 1rem;
+}
+
+#presentation .image img {width: 100%;}
 
 
 form {
