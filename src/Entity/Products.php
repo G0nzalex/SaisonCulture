@@ -152,4 +152,8 @@ class Products
 
         return $this;
     }
+    public function getProducts(): object
+    {
+        return $this->products;
+    }
 }
