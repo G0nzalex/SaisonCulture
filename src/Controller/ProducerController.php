@@ -68,50 +68,55 @@ class ProducerController extends AbstractController
             'product' => $product,
         ]);
     }
-    #[Route('/modprod', name: 'app_mod')]
-    public function modification(Request $request, EntityManagerInterface $entityManager, Products $product): Response
+    #[Route('/product/{id}', name: 'app_producer_show', methods: ['GET'])]
+    public function show(Products $product): Response
     {
-        
+        return $this->render('producer/show.html.twig', [
+            'product' => $product,
+        ]);
+    }
+    #[Route('/product/{id}/edit', name: 'app_product_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, Products $product, ProductsRepository $productsRepository): Response
+    {
         $form = $this->createForm(AddProductFormType::class, $product);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $product->setModifiedat(new DateTimeImmutable());
-            
-            $entityManager->persist($product);
-            $entityManager->flush();
-            
-
+            $productsRepository->add($product);
+            return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
         }
-        return $this->render('producer/modification.html.twig.', [
-            'modProductForm' => $form->createView(),
+
+        return $this->renderForm('producer/edit.html.twig', [
+            'product' => $product,
+            'form' => $form,
         ]);
     }
-    #[Route('/editaccount', name: 'app_acc')]
-    public function modificationCompte(Request $request, EntityManagerInterface $entityManager, User $user): Response
+    #[Route('/editaccount', name: 'app_acc', methods: "POST")]
+    public function modificationCompte(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $user = $this->getUser();
         $form = $this->createForm(RegistrationForProducerFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $user->setModifiedAt(new DateTimeImmutable());
+            // $user->setModifiedAt(new DateTimeImmutable());
             
             $entityManager->persist($user);
             $entityManager->flush();
             
 
         }
-        return $this->render('producer/modificationCompte.html.twig.', [
+        return $this->render('registration/registerProducer.html.twig.', [
             'registrationForProducerForm' => $form->createView(),
         ]);
     }
-    #[Route('/supprod', name: 'app_sup', methods: ['POST'])]
-    public function delete(Request $request, Products $products, ProductsRepository $productsRepository): Response
+    #[Route('/product/{id}', name: 'app_product_delete', methods: ['POST'])]
+    public function delete(Request $request, Products $product, ProductsRepository $productsRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$products->getId(), $request->request->get('_token'))) {
-            $productsRepository->remove($products);
+        if ($this->isCsrfTokenValid('delete'.$product->getId(), $request->request->get('_token'))) {
+            $productsRepository->remove($product);
         }
 
-        return $this->redirectToRoute('app_beer_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
     }
 }
