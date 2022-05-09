@@ -4,9 +4,9 @@ namespace App\Controller;
 use App\Form\CategoryFormType;
 use App\Entity\Category;
 use App\Entity\User;
+use App\Form\RegistrationFormType;
 use App\Repository\CategoryRepository;
 use App\Repository\UserRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -123,7 +123,7 @@ class AdminController extends AbstractController
     #[Route('/admin/users/{id}/edit', name: 'app_users_edit', methods: ['GET', 'POST'])]
     public function editusers(Request $request, User $users, UserRepository $usersRepository): Response
     {
-        $form = $this->createForm(RepositoryFormType::class, $users);
+        $form = $this->createForm(RegistrationFormType::class, $users);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
