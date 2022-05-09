@@ -2,6 +2,26 @@
 
 {% block title %}Catégorie{% endblock %}
 
+{% block stylesheets %}
+<style>
+
+h1 {
+    margin-bottom:20px;
+}
+body {
+    text-align:center;
+}
+table {
+    margin:auto;
+}
+a {
+    margin-top:1rem;
+    gap:2rem;
+    color: black;
+}
+</style>
+{% endblock %}
+
 {% block body %}
     <h1>Catégorie</h1>
 
@@ -20,8 +40,8 @@
                 <td>{{ category.description }}</td>
             </tr>
             <tr>
-                <th>Create_at</th>
-                <td>{{ category.createAt ? category.createAt|date('Y-m-d H:i:s') : '' }}</td>
+                <th>Created_at</th>
+                <td>{{ category.createdAt ? category.createdAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
