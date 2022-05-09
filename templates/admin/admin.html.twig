@@ -13,8 +13,8 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand shadow">             
-                <a href="{{ path('app_category_index') }}">Gestion des catégories</a>
-                <a href="">Gestion des Utilisateurs</a>
+                <a href="{{ path('app_category_index') }}"> Gestion des catégories </a>
+                <a href="{{path('app_users_index')}}"> Gestion des Utilisateurs </a>
                 </nav>
                 <!-- End of Topbar -->
 
@@ -22,9 +22,8 @@
 
                     <!-- Page Heading -->
                     <h1>Page d'Admin</h1>
-                    <p>Bonjour {{ app.user.email }}</p>
-
-                    <h2> Gestion des Admins </h2>
+                    <p>Bonjour {{ app.user.name }}</p>
+                    <p> Votre email est {{app.user.email}} </p>
     
                 </div>
 
