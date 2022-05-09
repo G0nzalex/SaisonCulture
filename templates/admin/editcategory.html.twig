@@ -21,7 +21,7 @@
 
     {{ include('admin/_formcategory.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('app_category_index') }}">Revenir à la liste</a>
+    <a class="black" href="{{ path('app_category_index') }}">Revenir à la liste</a>
 
     {{ include('admin/_delete_formcategory.html.twig') }}
 {% endblock %}

@@ -1,18 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Index des producteurs{% endblock %}
+{% block title %}Produits{% endblock %}
+
+{% block stylesheets %}
+<style>
+
+h1 {
+    margin-bottom:20px;
+}
+body {
+    text-align:center;
+}
+table {
+    margin:auto;
+}
+</style>
+{% endblock %}
 
 {% block body %}
-    <h1>Index des producteurs</h1>
+    <h1>Les produits</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
+                <th>Titre</th>
                 <th>Description</th>
+                <th>Prix</th>
+                <th>Stock disponible (en kg)</th>
+                <th> Bio </th>
                 <th>Created_at</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,20 +39,22 @@
                 <td>{{ product.id }}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.stock }}</td>
+                <td>{{ product.bio}}</td>
                 <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-
                 <td>
-                    <a href="{{ path('app_producer_show', {'id': product.id}) }}">show</a>
-                    <a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a>
+                    <a href="{{ path('app_producer_show', {'id': product.id}) }}">Voir / </a>
+                    <a href="{{ path('app_product_edit', {'id': product.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="8">Pas de produits</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_product_new') }}">Create new</a>
+    <a class="black" href="{{ path('app_product_new') }}">Crée un nouveau produit</a>
 {% endblock %}

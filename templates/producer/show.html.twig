@@ -1,34 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Beer{% endblock %}
+{% block title %}Produit{% endblock %}
+
+{% block stylesheets %}
+<style>
+
+h1 {
+    margin-bottom:20px;
+}
+body {
+    text-align:center;
+}
+table {
+    margin:auto;
+}
+a {
+    margin-top:1rem;
+    gap:2rem;
+}
+</style>
+{% endblock %}
 
 {% block body %}
-    <h1>Beer</h1>
+    <h1>Produit</h1>
 
     <table class="table">
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ beer.id }}</td>
+                <td>{{ product.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
-                <td>{{ beer.title }}</td>
+                <th>Nom</th>
+                <td>{{ product.name }}</td>
             </tr>
             <tr>
                 <th>Description</th>
-                <td>{{ beer.description }}</td>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ product.price }}</td>
+            </tr>
+            <tr>
+                <th>Quantités en stock (en kg)</th>
+                <td>{{ product.stock }}</td>
+            </tr>
+            <tr>
+                <th>Bio</th>
+                <td>{{ product.bio }}</td>
             </tr>
             <tr>
                 <th>Created_at</th>
-                <td>{{ beer.createdAt ? beer.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_beer_index') }}">back to list</a>
+    <a class="black" href="{{ path('app_product_index') }}"> Revenir à la liste</a>
 
-    <a href="{{ path('app_beer_edit', {'id': beer.id}) }}">edit</a>
+    <a class="black" href="{{ path('app_product_edit', {'id': product.id}) }}"> Modifier</a>
 
-    {{ include('beer/_delete_form.html.twig') }}
+    {{ include('producer/_delete_form.html.twig') }}
 {% endblock %}

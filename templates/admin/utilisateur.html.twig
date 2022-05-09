@@ -14,9 +14,6 @@ body {
 table {
     margin:auto;
 }
-a {
-    color: black;
-}
 </style>
 {% endblock %}
 
@@ -50,5 +47,5 @@ a {
         </tbody>
     </table>
 
-    <a href="{{ path('app_users_new') }}">Crée un nouvel utilisteurs</a>
+    <a class="black" href="{{ path('app_users_new') }}">Crée un nouvel utilisteurs</a>
 {% endblock %}
