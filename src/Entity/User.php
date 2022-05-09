@@ -59,6 +59,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'integer', nullable: true)]
     private $siret;
 
+    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
+    private $modifiedAt;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -257,6 +260,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setSiret(?int $siret): self
     {
         $this->siret = $siret;
+
+        return $this;
+    }
+
+    public function getModifiedAt(): ?\DateTimeImmutable
+    {
+        return $this->modifiedAt;
+    }
+
+    public function setModifiedAt(?\DateTimeImmutable $modifiedAt): self
+    {
+        $this->modifiedAt = $modifiedAt;
 
         return $this;
     }
