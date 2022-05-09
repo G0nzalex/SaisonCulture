@@ -63,6 +63,8 @@ class ProducerController extends AbstractController
                 
             }
             $productsRepository->add($product);
+            return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
+
 
             // ... persist the $product variable or any other work
         }
@@ -95,7 +97,7 @@ class ProducerController extends AbstractController
             'form' => $form,
         ]);
     }
-    #[Route('/editaccount', name: 'app_acc', methods: "POST")]
+    #[Route('/editaccount', name: 'app_acc', methods: ['GET', 'POST'])]
     public function modificationCompte(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->getUser();
@@ -103,12 +105,12 @@ class ProducerController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // $user->setModifiedAt(new DateTimeImmutable());
             
             $entityManager->persist($user);
             $entityManager->flush();
             
-
+            return $this->render('homepage/accueil.html.twig.'
+            );
         }
         return $this->render('registration/registerProducer.html.twig.', [
             'registrationForProducerForm' => $form->createView(),

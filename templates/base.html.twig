@@ -24,18 +24,20 @@
             <nav>  
                 <ul>
                     {% if app.user %}
-                    <li> <a href="{{ path('app_logout') }}">Déconnexion</a>
-                    {% if "is_granted('ROLE_ADMIN')" %}
-                        <a href="{{ path('app_dashboard') }}"> Admin </a>
-                {% endif %}
-                {% else %}
-                    <li> <a href="{{ path('app_register') }}"> Inscription </a> </li>
-                    <li> <a href="{{ path("login") }}">Connexion</a>
-                {% endif %}
-                    <li> <a href="{{ path('app_register') }}"> Producteurs </a> </li>
-                    <li> <a href="{{ path('app_register') }}"> Visiteurs </a>  </li>
-                    <li> <a href="{{ path('login') }}"> Connexion </a> </li>
-
+                        <li> <a href="{{ path('app_logout') }}">Déconnexion</a>
+                        {% if is_granted("ROLE_ADMIN") %}
+                            <li>
+                                <a href="{{ path("app_dashboard") }}">Page admin</a>
+                            </li>
+                        {% endif %}
+                        {% if is_granted("ROLE_PRODUCER") %}
+                            <a href="{{ path('app_product_index') }}"> Mes Produits </a>
+                            <a href="{{path('app_acc')}}" > Ajout Information </a>
+                        {% endif %}
+                        {% else %}
+                        <li> <a href="{{ path('app_register') }}"> Inscription </a> </li>
+                        <li> <a href="{{ path("login") }}">Connexion</a>
+                    {% endif %}
                 </ul>
             </nav>
             {% block header %}{% endblock %}

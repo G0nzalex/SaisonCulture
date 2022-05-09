@@ -17,7 +17,6 @@ table {
 a {
     margin-top:1rem;
     gap:2rem;
-    color: black;
 }
 </style>
 {% endblock %}
@@ -43,7 +42,7 @@ a {
         </tbody>
     </table>
 
-    <a href="{{ path('app_users_index') }}">Retour à la liste</a>
+    <a class="black" href="{{ path('app_users_index') }}">Retour à la liste</a>
 
     {{ include('admin/_delete_formusers.html.twig') }}
 {% endblock %}
