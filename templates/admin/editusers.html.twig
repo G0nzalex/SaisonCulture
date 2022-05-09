@@ -13,6 +13,9 @@
     input, label, button {
         margin : 10px;
     }
+    a {
+        color:black;
+    }
 </style>
 {% endblock %}
 
@@ -21,7 +24,7 @@
 
     {{ include('admin/_formusers.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('app_users_index') }}">Revenir à la liste</a>
+    <a href="{{ path('app_users_index') }}"> Revenir à la liste </a>
 
     {{ include('admin/_delete_formusers.html.twig') }}
 {% endblock %}

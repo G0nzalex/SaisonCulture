@@ -29,7 +29,6 @@ a {
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Email</th>
-                <th>Role</th>
                 <th>Options</th>
             </tr>
         </thead>
@@ -38,10 +37,9 @@ a {
             <tr>
                 <td>{{ users.id }}</td>
                 <td>{{ users.name }}</td>
-                <td> {{users.email}}<td>
-                <td>{{ users.role }}</td>
+                <td> {{users.email}}</td>
                 <td>
-                    <a href="{{ path('app_users_show', {'id': users.id}) }}">Voir</a> /
+                    <a href="{{ path('app_users_show', {'id': users.id}) }}">Voir / </a>
                     <a href="{{ path('app_users_edit', {'id': users.id}) }}">Modifier</a>
                 </td>
             </tr>
