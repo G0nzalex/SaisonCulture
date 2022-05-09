@@ -36,6 +36,8 @@ class ProducerController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var UploadedFile $imageFile */
             $imageFile = $form->get('image')->getData();
+            $product->setActive(true);
+            $product->setCreatedat(new \DateTimeImmutable());
 
             // this condition is needed because the 'image' field is not required
             // so the PDF file must be processed only when a file is uploaded
@@ -58,7 +60,9 @@ class ProducerController extends AbstractController
                 // updates the 'imageFilename' property to store the PDF file name
                 // instead of its contents
                 $product->setImg($newFilename);
+                
             }
+            $productsRepository->add($product);
 
             // ... persist the $product variable or any other work
         }

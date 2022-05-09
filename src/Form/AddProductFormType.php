@@ -19,7 +19,7 @@ class AddProductFormType extends AbstractType
             ->add('stock')
             ->add('price')
             ->add('description')
-            ->add('img', FileType::class, [
+            ->add('image', FileType::class, [
                 'label' => 'Image (en jpeg, jpg ou png)',
 
                 // unmapped means that this field is not associated to any entity property

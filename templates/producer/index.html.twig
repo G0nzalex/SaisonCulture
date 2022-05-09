@@ -19,19 +19,13 @@
         {% for product in products %}
             <tr>
                 <td>{{ product.id }}</td>
-                <td>{{ product.title }}</td>
+                <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
                 <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ product.user.email }}</td>
-                <td>
-                    {% if product.category %}
-                        {{ product.category.title }}
-                    {% endif %}
-                </td>
 
                 <td>
                     <a href="{{ path('app_producer_show', {'id': product.id}) }}">show</a>
-                    <a href="{{ path('app_producer_edit', {'id': product.id}) }}">edit</a>
+                    <a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
