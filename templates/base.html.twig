@@ -23,7 +23,6 @@
             </div>
             <nav>  
                 <ul>
-<<<<<<< HEAD
                     {% if app.user %}
                     <li> <a href="{{ path('app_logout') }}">Déconnexion</a>
                     {% if "is_granted('ROLE_ADMIN')" %}
@@ -33,12 +32,10 @@
                     <li> <a href="{{ path('app_register') }}"> Inscription </a> </li>
                     <li> <a href="{{ path("login") }}">Connexion</a>
                 {% endif %}
-=======
                     <li> <a href="{{ path('app_register') }}"> Producteurs </a> </li>
                     <li> <a href="{{ path('app_register') }}"> Visiteurs </a>  </li>
                     <li> <a href="{{ path('login') }}"> Connexion </a> </li>
 
->>>>>>> Alexandre
                 </ul>
             </nav>
             {% block header %}{% endblock %}
