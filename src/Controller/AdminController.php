@@ -120,23 +120,6 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/users/{id}/edit', name: 'app_users_edit', methods: ['GET', 'POST'])]
-    public function editusers(Request $request, User $users, UserRepository $usersRepository): Response
-    {
-        $form = $this->createForm(RegistrationFormType::class, $users);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $usersRepository->add($users);
-            return $this->redirectToRoute('app_users_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('admin/editusers.html.twig', [
-            'users' => $users,
-            'form' => $form,
-        ]);
-    }
-
     #[Route('admin/users/{id}', name: 'app_users_delete', methods: ['POST'])]
     public function deleteusers(Request $request, User $users, UserRepository $userRepository): Response
     {

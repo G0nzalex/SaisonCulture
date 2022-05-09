@@ -39,8 +39,7 @@ a {
                 <td>{{ users.name }}</td>
                 <td> {{users.email}}</td>
                 <td>
-                    <a href="{{ path('app_users_show', {'id': users.id}) }}">Voir / </a>
-                    <a href="{{ path('app_users_edit', {'id': users.id}) }}">Modifier</a>
+                    <a href="{{ path('app_users_show', {'id': users.id}) }}"> Voir </a>
                 </td>
             </tr>
         {% else %}
