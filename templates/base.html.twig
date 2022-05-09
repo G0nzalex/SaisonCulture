@@ -6,6 +6,8 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
+        
         {% block stylesheets %}
         {% endblock %}
 
@@ -21,9 +23,15 @@
             </div>
             <nav>  
                 <ul>
-                    <li> <a href="{{ path('app_register') }}"> Producteurs </a> </li>
-                    <li> <a href="{{ path('app_register') }}"> Visiteurs </a>  </li>
-                    <li> <a href="{{ path('login') }}"> Connexion </a> </li>
+                    {% if app.user %}
+                    <li> <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    {% if "is_granted('ROLE_ADMIN')" %}
+                        <a href="{{ path('app_dashboard') }}"> Admin </a>
+                {% endif %}
+                {% else %}
+                    <li> <a href="{{ path('app_register') }}"> Inscription </a> </li>
+                    <li> <a href="{{ path("login") }}">Connexion</a>
+                {% endif %}
                 </ul>
             </nav>
              {% block header %}{% endblock %}
