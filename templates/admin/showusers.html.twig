@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateur{% endblock %}
+
+{% block stylesheets %}
+<style>
+
+h1 {
+    margin-bottom:20px;
+}
+body {
+    text-align:center;
+}
+table {
+    margin:auto;
+}
+a {
+    margin-top:1rem;
+    gap:2rem;
+    color: black;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+    <h1>Utilisateur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ users.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ users.name }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ users.email }}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>{{ users.role }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_users_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('app_users_edit', {'id': users.id}) }}"> Modifier </a>
+
+    {{ include('admin/_delete_formusers.html.twig') }}
+{% endblock %}
