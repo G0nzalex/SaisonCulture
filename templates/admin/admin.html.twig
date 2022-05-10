@@ -10,7 +10,7 @@
 
             <!-- Main Content -->
             <div id="content">
-
+                {# Une petite navbar #}
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand shadow">             
                 <a href="{{ path('app_category_index') }}"> Gestion des catégories </a>
@@ -21,6 +21,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
+                    {# Une petite présentation pour la page d'accueil Admin #}
                     <h1>Page d'Admin</h1>
                     <p>Bonjour {{ app.user.name }}</p>
                     <p> Votre email est {{app.user.email}} </p>

@@ -2,6 +2,7 @@
 
 {% block title %}Catégories{% endblock %}
 
+{# Le CSS  #}
 {% block stylesheets %}
 <style>
 
@@ -14,14 +15,16 @@ body {
 table {
     margin:auto;
 }
-
 </style>
 {% endblock %}
 
 {% block body %}
+    {# Le titre #}
     <h1>Les Catégories</h1>
 
+    {# Un tableau pour afficher les catégories #}
     <table class="table">
+        {# Le haut du tableau #}
         <thead>
             <tr>
                 <th>Id</th>
@@ -31,6 +34,8 @@ table {
                 <th>Options</th>
             </tr>
         </thead>
+
+        {# Le corps du tableau #}
         <tbody>
         {% for category in categoryForm %}
             <tr>
@@ -51,5 +56,6 @@ table {
         </tbody>
     </table>
 
+    {# Le lien pour crée une nouvelle catégorie #}
     <a class="black" href="{{ path('app_category_new') }}">Crée une nouvelle catégorie</a>
 {% endblock %}
