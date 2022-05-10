@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Catégories{% endblock %}
+{% block title %}Utilisateurs{% endblock %}
 
 {% block stylesheets %}
 <style>
@@ -18,7 +18,7 @@ table {
 {% endblock %}
 
 {% block body %}
-    <h1>Les Catégories</h1>
+    <h1>Tableaux des utilisateurs inscrits</h1>
 
     <table class="table">
         <thead>
@@ -34,18 +34,18 @@ table {
             <tr>
                 <td>{{ users.id }}</td>
                 <td>{{ users.name }}</td>
-                <td> {{users.email}}</td>
+                <td>{{users.email}}</td>
                 <td>
                     <a href="{{ path('app_users_show', {'id': users.id}) }}"> Voir </a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">Pas de correspondances</td>
+                <td colspan="5">Pas de correspondance</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a class="black" href="{{ path('app_users_new') }}">Crée un nouvel utilisteurs</a>
+    <a class="black" href="{{ path('app_users_new') }}">Créer un nouvel utilisateur</a>
 {% endblock %}
