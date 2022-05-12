@@ -1,0 +1,158 @@
+@font-face {
+    font-family:'BebasNeue';
+    src: url("../fonts/BebasNeue-Regular.ttf");
+
+    font-family:'JosephinSans';
+    src: url("../fonts/JosefinSans-VariableFont_wght.ttf");
+
+}
+* {
+    
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    font-family:'JosephinSans';
+}
+.printemps {
+    background: rgb(229,241,27);
+    background: -o-radial-gradient(circle, rgba(229,241,27,1) 32%, #89db0d 53%, #4af90f 79%);
+    background: radial-gradient(circle, rgba(229,241,27,1) 32%, rgba(137,219,13,1) 53%, rgba(74,249,15,1) 79%);
+}
+.wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+/* Header */
+#masthead {
+    background-color: #89db0d;
+}
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#masthead .wrap{
+    display: block;
+    /* justify-content: space-between;
+    align-items: center; */
+}
+/* #masthead nav ul{
+    display: flex;gap:2rem;padding-right: 1rem;
+} */
+#masthead nav ul li a {
+    font-size: 2rem;
+    color: white;
+}
+#masthead nav ul li a:hover {
+    color:green;
+}
+#masthead .logo img{
+    width: 130px;
+}
+img{
+    width: 50px;
+}
+/* Footer */
+#colophon {
+    /* display: flex; */
+    font-size: 1rem;
+    background-color: #89db0d;
+    color: white;
+    padding: 4rem 1rem;
+}
+#colophon .menufooter {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    text-align: center; 
+}
+#colophon .menufooter li {
+    flex:1;
+    font-size: 2rem;
+}
+#colophon .menufooter  img {
+    width: 200px;
+}
+#colophon .menureseau {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    margin-bottom: 3rem;
+}
+#colophon .menureseau  img {width: 50px;}
+#colophon .footend {
+    /* display: flex;
+    justify-content: space-around;
+    align-items: center; */
+    text-align: center; 
+}
+/* Fin du footer */
+@media screen and (min-width: 768px) {
+    #masthead nav ul{
+    display: flex;gap:2rem;padding-right: 1rem;
+    }
+    #masthead .wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #masthead nav ul{
+        display: flex;gap:2rem;padding-right: 1rem;
+    }
+    #masthead nav ul li a {
+        font-size: 1.6rem;
+        color: white;
+    }
+    #masthead nav ul li a:hover {
+        color:green;
+    }
+    #masthead .logo img{
+        width: 130px;
+    }
+    
+    #colophon {
+        font-size: 1rem;
+        background-color: #89db0d;
+        color: white;
+        padding: 4rem 1rem;
+    }
+    #colophon .menufooter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+    #colophon .menufooter li {
+        flex:1;
+        font-size: 1.2rem;
+    }
+    #colophon .menufooter  img {width: 200px;}
+    #colophon .menureseau {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:2rem;
+        margin-bottom: 3rem;
+    }
+    #colophon .menureseau  img {width: 80px;}
+    #colophon .footend {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+}
