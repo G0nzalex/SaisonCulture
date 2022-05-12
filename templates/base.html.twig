@@ -6,7 +6,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/stylerefonte.css') }}">
         <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
         
         {% block stylesheets %}
@@ -22,7 +22,7 @@
             <div class="logo">
                 <a href="{{ path('app_homepage') }}"> <img src ="{{ asset('assets/img/logoprintemps.png') }}">
             </div>
-            <nav>  
+            <nav class="wrap">  
                 <ul>
                     {% if app.user %}
                         <li> <a href="{{ path('app_logout') }}">Déconnexion</a>
@@ -32,8 +32,8 @@
                             </li>
                         {% endif %}
                         {% if is_granted("ROLE_PRODUCER") %}
-                            <a href="{{ path('app_product_index') }}"> Mes Produits </a>
-                            <a href="{{path('app_acc')}}" > Ajout Information </a>
+                            <li><a href="{{ path('app_product_index') }}"> Mes Produits </a></li>
+                            <li><a href="{{path('app_acc')}}" > Ajout Information </a></li>
                         {% endif %}
                         {% else %}
                         <li> <a href="{{ path('app_register') }}"> Inscription </a> </li>
@@ -50,7 +50,7 @@
     </body>
 
     <footer id="colophon">
-    <div class="wrap">
+    {# <div class="wrap"> #}
             <ul class="menufooter">
                 <li> <a href="{{ path('app_register') }}"> Producteurs </a> </li>
                 <li> <a href="{{ path('app_register') }}"> Visiteurs </a> </li>
@@ -71,7 +71,7 @@
                 <li> <a href="{{ path('app_rgpd') }}"> Charte de protection des donnés </a></li>
                 <li> <a href="{{ path('app_cgu') }}"> CGU </a></li>
             </ul>
-            </div>
+            {# </div> #}
         {% block footer %}
             
         {% endblock %}
