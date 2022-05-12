@@ -31,7 +31,9 @@ a{
     color: white;
     text-decoration: none;
 }
-
+div, section{
+    margin: 10px 0;
+}
 ul, ol {
     list-style: none;
 }
@@ -46,37 +48,34 @@ ul, ol {
 }
 #masthead .wrap{
     display: block;
-    /* justify-content: space-between;
-    align-items: center; */
 }
-/* #masthead nav ul{
-    display: flex;gap:2rem;padding-right: 1rem;
-} */
 #masthead nav ul li a {
     font-size: 2rem;
     color: white;
+}
+#masthead nav ul{
+    display: flex;
+    /* gap:2rem; */
+    /* padding-right: 1rem; */
+    flex-wrap: wrap;
 }
 #masthead nav ul li a:hover {
     color:green;
 }
 #masthead .logo img{
-    width: 130px;
+    width: 200px;
 }
 img{
     width: 50px;
 }
 /* Footer */
 #colophon {
-    /* display: flex; */
     font-size: 1rem;
     background-color: #89db0d;
     color: white;
     padding: 4rem 1rem;
 }
 #colophon .menufooter {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
     text-align: center; 
 }
 #colophon .menufooter li {
@@ -93,13 +92,109 @@ img{
     gap:2rem;
     margin-bottom: 3rem;
 }
-#colophon .menureseau  img {width: 50px;}
+#colophon .menureseau  img {
+    width: 50px;
+}
 #colophon .footend {
-    /* display: flex;
-    justify-content: space-around;
-    align-items: center; */
     text-align: center; 
 }
+.contenu .wrap{
+    display: block; gap: 1rem;
+}
+.contenu .fond {
+    width:70%;
+    margin: auto;
+}
+.contenu .fond img{
+    width:100%;
+}
+
+.contenu .description {
+    /* margin-top: 2%; */
+    width: 70%;
+    display: block;
+    /* margin-left: 5%; */
+    margin: auto;
+}
+
+.description button {
+    padding: 10px;
+    background-color: black;
+    color: #fff;
+    border: none;
+}
+#inscription {
+    text-align: center;
+    padding: 3rem 0;
+}
+#inscription  .wrap{
+    display: block;
+    /* justify-content: center; */
+    /* gap:2rem; */
+}
+#inscription  .wrap > div {
+    width:40%;
+}
+#inscription h2 {
+    margin-bottom: 1rem;
+}
+#inscription button {
+    margin-top: 1rem;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+}
+#inscription img {
+    width: 100%;
+}
+.producteur, .visteur{
+    margin: 20px auto;
+}
+#bloc {
+    text-align: center;
+    padding: 3rem 0;
+}
+#bloc .wrap{
+    display:block;
+}
+#bloc h2 {
+    margin-bottom: 1rem;
+}
+#bloc .cartes {
+    display: flex;
+    justify-content: space-between;
+}
+#bloc .cartes .produit {
+    padding: 1rem;
+    background-color: #89db0d;
+    width: 20%;
+}
+#bloc .cartes .produit p {
+    margin-top: 1rem;
+}
+
+#bloc .cartes .produit img {width: 100%;}
+#presentation .wrap{
+    display: flex;
+    text-align: center;
+  
+}
+
+#presentation .wrap > div {
+    width:50%;
+}
+
+#presentation .texte h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#presentation .texte li {
+    padding: 1rem;
+}
+
+#presentation .image img {width: 100%;}
 /* Fin du footer */
 @media screen and (min-width: 768px) {
     #masthead nav ul{
@@ -154,5 +249,149 @@ img{
         justify-content: space-around;
         align-items: center;
         text-align: center;
+    }
+    .contenu .wrap{
+        display: flex; gap: 1rem;
+    }
+    .contenu .fond {width:70%}
+    .contenu .fond img{width:100%}
+    .contenu .description {width:30%;}
+    
+    .contenu .description {
+        margin-top: 2%;
+        width: 50%;
+        display: block;
+        margin-left: 5%;
+    }
+    
+    .description h2, .description h1 {
+        font-family: 'BebasNeue';
+        margin-bottom: 5%;
+    }
+    
+    .description p {
+        margin-bottom: 5%;
+        font-family: 'JosephinSans';
+        font-size: large;
+        
+    }
+    
+    .description button {
+        padding: 10px;
+        background-color: black;
+        color: #fff;
+        border: none;
+    }
+    #inscription {
+        text-align: center;
+        padding: 3rem 0;
+    }
+    #inscription  .wrap{
+        display: flex;
+        justify-content: center;
+        gap:2rem;
+       
+    }
+    #inscription  .wrap > div {
+        width:40%;
+    }
+    #inscription h2 {
+        margin-bottom: 1rem;
+    }
+    #inscription button {
+        margin-top: 1rem;
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 1rem;
+    }
+    #inscription img {
+        width: 100%;
+    }
+    
+    #bloc {
+        text-align: center;
+        padding: 3rem 0;
+    }
+    #bloc h2 {
+        margin-bottom: 1rem;
+    }
+    #bloc .cartes {
+        display: flex;
+        justify-content: space-between;
+    }
+    #bloc .cartes .produit {
+        padding: 1rem;
+        background-color: #89db0d;
+        width: 20%;
+    }
+    #bloc .cartes .produit p {
+        margin-top: 1rem;
+    }
+    
+    #bloc .cartes .produit img {width: 100%;}
+    
+    #presentation .wrap{
+        display: flex;
+        text-align: center;
+      
+    }
+    
+    #presentation .wrap > div {
+        width:50%;
+    }
+    
+    #presentation .texte h2 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    #presentation .texte li {
+        padding: 1rem;
+    }
+    
+    #presentation .image img {width: 100%;}
+    
+    
+    form {
+        align-items: center;
+        text-align: center;
+        padding: 3rem;
+    }
+    
+    form label {
+        margin-left: 10px;
+        padding: 5px;
+    }
+    
+    form input {
+        margin-left: 10px;
+        padding: 5px;
+    }
+    
+    form button {
+        margin-left: 20px;
+        padding: 10px;
+        background-color: black;
+        color: white;
+    }
+    
+    form button:hover {
+        cursor: pointer;
+    }
+    
+    table {
+        background: rgb(229,241,27);
+        background: -o-radial-gradient(circle, rgba(229,241,27,1) 32%, rgba(137,219,13,1) 53%, rgba(74,249,15,1) 79%);
+        background: radial-gradient(circle, rgba(229,241,27,1) 32%, rgba(137,219,13,1) 53%, rgba(74,249,15,1) 79%);
+    }
+    
+    table, tr, td, th {
+        border: 1px black solid;
+        padding: 5px;
+    }
+    
+    .black {
+        color: black;
     }
 }
