@@ -202,23 +202,30 @@ ul, ol {
 
 
 form {
+    display: block;
     align-items: center;
     text-align: center;
     padding: 3rem;
 }
 
 form label {
-    margin-left: 10px;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
     padding: 5px;
 }
 
 form input {
-    margin-left: 10px;
+    width: 100%;
+    margin-bottom: 20px;
     padding: 5px;
 }
 
+form textarea {
+    width: 100%;
+}
+
 form button {
-    margin-left: 20px;
     padding: 10px;
     background-color: black;
     color: white;
@@ -229,6 +236,7 @@ form button:hover {
 }
 
 table {
+    margin: auto;
     background: rgb(229,241,27);
     background: -o-radial-gradient(circle, rgba(229,241,27,1) 32%, rgba(137,219,13,1) 53%, rgba(74,249,15,1) 79%);
     background: radial-gradient(circle, rgba(229,241,27,1) 32%, rgba(137,219,13,1) 53%, rgba(74,249,15,1) 79%);
