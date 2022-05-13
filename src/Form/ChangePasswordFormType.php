@@ -15,33 +15,32 @@ class ChangePasswordFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('plainPassword', RepeatedType::class, [
-                'type' => PasswordType::class,
-                'first_options' => [
-                    'attr' => ['autocomplete' => 'new-password'],
-                    'constraints' => [
-                        new NotBlank([
-                            'message' => 'Please enter a password',
-                        ]),
+        ->add('plainPassword', RepeatedType::class, [
+            'type' => PasswordType::class,
+            'first_options' => [
+                'attr' => ['autocomplete' => 'new-password'],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Entrer un mot de passe',
+                    ]),
                         new Length([
                             'min' => 6,
-                            'minMessage' => 'Your password should be at least {{ limit }} characters',
+                            'minMessage' => 'Votre mot de passe doit faire au moins {{ limit }} caractères',
                             // max length allowed by Symfony for security reasons
                             'max' => 4096,
                         ]),
                     ],
-                    'label' => 'New password',
+                    'label' => 'Nouveau Mot de passe',
                 ],
                 'second_options' => [
                     'attr' => ['autocomplete' => 'new-password'],
-                    'label' => 'Repeat Password',
+                    'label' => 'Répéter le Mot de passe',
                 ],
-                'invalid_message' => 'The password fields must match.',
+                'invalid_message' => 'Le Mot de passe  ne correspons pas.',
                 // Instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

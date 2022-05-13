@@ -12,16 +12,14 @@ h1 {
 body {
     text-align:center;
 }
-table {
-    margin:auto;
-}
+
 </style>
 {% endblock %}
 
 {% block body %}
     {# Le titre #}
     <h1>Les Catégories</h1>
-
+    
     {# Un tableau pour afficher les catégories #}
     <table class="table">
         {# Le haut du tableau #}
@@ -34,7 +32,6 @@ table {
                 <th>Options</th>
             </tr>
         </thead>
-
         {# Le corps du tableau #}
         <tbody>
         {% for category in categoryForm %}
