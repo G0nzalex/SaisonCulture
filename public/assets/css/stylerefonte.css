@@ -41,11 +41,7 @@ ul, ol {
 #masthead {
     background-color: #89db0d;
 }
-.wrap{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 #masthead .wrap{
     display: block;
 }
@@ -195,7 +191,54 @@ img{
 }
 
 #presentation .image img {width: 100%;}
-/* Fin du footer */
+
+form {
+    display: block;
+    align-items: center;
+    text-align: center;
+    padding: 3rem;
+}
+
+form label {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+form input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+form textarea {
+    width: 100%;
+}
+
+form button {
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+form button:hover {
+    cursor: pointer;
+}
+table {
+    background: rgb(229,241,27);
+    background: -o-radial-gradient(circle, rgba(229,241,27,1) 32%, rgba(137,219,13,1) 53%, rgba(74,249,15,1) 79%);
+    background: radial-gradient(circle, rgba(229,241,27,1) 32%, rgba(137,219,13,1) 53%, rgba(74,249,15,1) 79%);
+}
+
+table, tr, td, th {
+    border: 1px black solid;
+    padding: 5px;
+}
+
+.black {
+    color: black;
+}
 @media screen and (min-width: 768px) {
     #masthead nav ul{
     display: flex;gap:2rem;padding-right: 1rem;
@@ -354,23 +397,30 @@ img{
     
     
     form {
+        display: block;
         align-items: center;
         text-align: center;
         padding: 3rem;
     }
     
     form label {
-        margin-left: 10px;
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
         padding: 5px;
     }
     
     form input {
-        margin-left: 10px;
+        width: 100%;
+        margin-bottom: 20px;
         padding: 5px;
     }
     
+    form textarea {
+        width: 100%;
+    }
+    
     form button {
-        margin-left: 20px;
         padding: 10px;
         background-color: black;
         color: white;
